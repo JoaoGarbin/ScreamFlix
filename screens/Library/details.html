@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Filme - ScreamFlix</title>->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/tailwind-config.js"></script>
+</head>
+
+<body class="bg-main-bg text-gray-300 font-sans">
+    <nav class="bg-secondary-bg bg-opacity-75 p-4 fixed top-0 left-0 right-0 z-20 backdrop-blur-sm border-b border-gray-900">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="./catalog.html" class="text-3xl font-bold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                <span class="text-accent">Scream</span><span class="text-white">Flix</span>
+            </a>
+            <ul class="hidden md:flex space-x-8 items-center">
+                <li><a href="#" class="border-b-2 border-transparent hover:border-accent pb-1 transition-colors duration-300">Início</a></li>
+                <li><a href="#" class="border-b-2 border-transparent hover:border-accent pb-1 transition-colors duration-300">Filmes</a></li>
+                <li><a href="#" class="border-b-2 border-transparent hover:border-accent pb-1 transition-colors duration-300">Séries</a></li>
+                <li><a href="#" class="border-b-2 border-transparent hover:border-accent pb-1 transition-colors duration-300">Minha Lista</a></li>
+            </ul>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="../Library/catalog.html" class="hover:text-accent transition-colors duration-300">Sair</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="h-screen bg-cover bg-center" style="background-image: url('https://image.tmdb.org/t/p/original/mGN05v082d2a233lBDg6p4I54s3.jpg');">
+        <div class="h-full bg-gradient-to-t from-main-bg via-main-bg/80 to-transparent">
+            <main class="container mx-auto px-4 pt-24 pb-10 flex items-end h-full">
+                <div>
+                    <a href="./catalog.html" class="mb-4 inline-flex items-center px-3 py-1 bg-secondary-bg/50 rounded-md hover:bg-secondary-bg transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        Voltar ao Catálogo
+                    </a>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">O Iluminado</h1>
+                    <div class="flex items-center space-x-4 mb-4 text-gray-400">
+                        <span>1980</span>
+                        <span>•</span>
+                        <span>2h 26m</span>
+                        <span>•</span>
+                        <span class="border border-gray-400 px-2 rounded">16</span>
+                    </div>
+                    <p class="text-lg max-w-3xl mb-6">Jack Torrance torna-se o zelador de inverno do isolado Hotel Overlook, na esperança de curar o seu bloqueio de escritor. Ele instala-se com a sua esposa, Wendy, e o seu filho, Danny, que é atormentado por premonições psíquicas...</p>
+                    <div class="flex space-x-4">
+                        <button class="bg-accent hover:bg-accent-dark text-white font-bold py-3 px-8 rounded-md transition-colors duration-300">
+                            Assistir Filme
+                        </button>
+                        <button class="bg-black/50 border border-white text-white font-bold py-3 px-8 rounded-md hover:bg-white hover:text-black transition-colors duration-300">
+                            Ver Trailer
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer class="bg-secondary-bg text-gray-400 text-center py-6">
+        <div class="container mx-auto">
+            <p>&copy; 2025 ScreamFlix. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

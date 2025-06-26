@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Cadastro de Filmes - ScreamFlix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/tailwind-config.js"></script>
+    
+  </head>
+  <body class="bg-main-bg text-gray-300 font-sans">
+    <nav class="bg-secondary-bg p-4 border-b border-gray-900">
+      <div class="container mx-auto flex justify-between items-center">
+        <a
+          href="../Home/index.html"
+          class="text-3xl font-bold"
+          style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)"
+        >
+          <span class="text-accent">Scream</span
+          ><span class="text-white">Flix</span>
+        </a>
+        <div class="flex items-center space-x-6">
+          <a
+            href="./listMovie.html"
+            class="hover:text-accent transition-colors duration-300"
+            >Listar Filmes</a
+          >
+          <a
+            href="../Home/index.html"
+            class="hover:text-accent transition-colors duration-300"
+            >Sair</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main class="container mx-auto p-4 md:p-8">
+      <div>
+        <header class="mb-8 text-center">
+          <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
+            Cadastro de Filme
+          </h1>
+          <p class="text-lg text-gray-400">
+            Cadastrar novo título no catálogo.
+          </p>
+        </header>
+
+        <form
+          id="movie-register-form"
+          class="space-y-6 max-w-4xl mx-auto bg-secondary-bg p-8 rounded-lg shadow-xl border border-gray-800"
+        >
+          <div>
+            <label
+              for="movie-title"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >Título do Filme</label
+            >
+            <input
+              type="text"
+              id="movie-title"
+              class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg block w-full p-2.5"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="movie-synopsis"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >Sinopse</label
+            >
+            <textarea
+              id="movie-synopsis"
+              rows="4"
+              class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg block w-full p-2.5"
+            ></textarea>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <label
+                for="movie-year"
+                class="block mb-2 text-sm font-medium text-gray-300"
+                >Ano</label
+              >
+              <input
+                type="number"
+                id="movie-year"
+                class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg block w-full p-2.5"
+                placeholder="2024"
+              />
+            </div>
+            <div>
+              <label
+                for="movie-duration"
+                class="block mb-2 text-sm font-medium text-gray-300"
+                >Duração (minutos)</label
+              >
+              <input
+                type="number"
+                id="movie-duration"
+                class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg block w-full p-2.5"
+                placeholder="120"
+              />
+            </div>
+            <div>
+              <label
+                for="movie-rating"
+                class="block mb-2 text-sm font-medium text-gray-300"
+                >Classificação</label
+              >
+              <input
+                type="text"
+                id="movie-rating"
+                class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg block w-full p-2.5"
+                placeholder="16"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              for="movie-category"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >Categoria</label
+            >
+            <select
+              id="movie-category"
+              class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg block w-full p-2.5"
+            >
+              <option>Melhores Filmes de Terror</option>
+              <option>Lançamentos de Terror</option>
+              <option>Séries de Terror</option>
+              <option>Slasher</option>
+              <option>Terror Sobrenatural</option>
+              <option>Terror Psicológico</option>
+              <option>Terror Folclórico</option>
+              <option>Found Footage</option>
+            </select>
+          </div>
+          <div>
+            <label
+              for="movie-poster-url"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >URL do Pôster</label
+            >
+            <input
+              type="url"
+              id="movie-poster-url"
+              class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg block w-full p-2.5"
+              placeholder="https://image.tmdb.org/..."
+            />
+          </div>
+          <div>
+            <label
+              for="movie-bg-url"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >URL da Imagem de Fundo</label
+            >
+            <input
+              type="url"
+              id="movie-bg-url"
+              class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg block w-full p-2.5"
+              placeholder="https://image.tmdb.org/..."
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full text-white bg-accent hover:bg-accent-dark font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300"
+          >
+            Cadastrar Filme
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      document
+        .getElementById("movie-register-form")
+        .addEventListener("submit", (event) => {
+          event.preventDefault();
+          alert("Filme cadastrado com sucesso! (Simulação)");
+          event.target.reset(); 
+        });
+    </script>
+  </body>
+</html>

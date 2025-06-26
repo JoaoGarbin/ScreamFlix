@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - ScreamFlix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/tailwind-config.js"></script>
+  </head>
+  <body class="bg-main-bg text-gray-300 font-sans">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+      <a
+        href="../Home/index.html"
+        class="text-4xl font-bold mb-8"
+        style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)"
+      >
+        <span class="text-accent">Scream</span
+        ><span class="text-white">Flix</span>
+      </a>
+
+      <div
+        class="bg-secondary-bg p-8 rounded-lg shadow-xl w-full max-w-md relative border border-gray-800"
+      >
+        <div class="flex border-b border-gray-700 mb-6">
+          <button
+            id="login-tab"
+            class="py-2 px-4 border-b-2 border-accent text-white w-1/2"
+          >
+            Entrar
+          </button>
+          <button
+            id="register-tab"
+            class="py-2 px-4 border-b-2 border-transparent text-gray-400 w-1/2"
+          >
+            Cadastrar
+          </button>
+        </div>
+
+        <form id="login-form" class="space-y-6">
+          <div>
+            <label
+              for="login-email"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="login-email"
+              class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5"
+              placeholder="nome@email.com"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="login-password"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >Senha</label
+            >
+            <input
+              type="password"
+              id="login-password"
+              class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full text-white bg-accent hover:bg-accent-dark font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300"
+          >
+            Entrar na sua conta
+          </button>
+        </form>
+
+        <form id="register-form" class="hidden space-y-6">
+          <div>
+            <label
+              for="register-name"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >Nome</label
+            >
+            <input
+              type="text"
+              id="register-name"
+              name="username"
+              class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5"
+              placeholder="O seu nome"
+            />
+          </div>
+          <div>
+            <label
+              for="register-email"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="register-email"
+              class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5"
+              placeholder="nome@email.com"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="register-password"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >Senha</label
+            >
+            <input
+              type="password"
+              id="register-password"
+              class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="confirm-password"
+              class="block mb-2 text-sm font-medium text-gray-300"
+              >Confirmar Senha</label
+            >
+            <input
+              type="password"
+              id="confirm-password"
+              class="bg-main-bg border border-gray-700 text-white text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full text-white bg-accent hover:bg-accent-dark font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300"
+          >
+            Criar conta
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const loginTab = document.getElementById("login-tab");
+      const registerTab = document.getElementById("register-tab");
+      const loginForm = document.getElementById("login-form");
+      const registerForm = document.getElementById("register-form");
+
+      loginTab.addEventListener("click", () => {
+        loginTab.classList.replace("border-transparent", "border-accent");
+        loginTab.classList.replace("text-gray-400", "text-white");
+        registerTab.classList.replace("border-accent", "border-transparent");
+        registerTab.classList.replace("text-white", "text-gray-400");
+        loginForm.classList.remove("hidden");
+        registerForm.classList.add("hidden");
+      });
+
+      registerTab.addEventListener("click", () => {
+        registerTab.classList.replace("border-transparent", "border-accent");
+        registerTab.classList.replace("text-gray-400", "text-white");
+        loginTab.classList.replace("border-accent", "border-transparent");
+        loginTab.classList.replace("text-white", "text-gray-400");
+        registerForm.classList.remove("hidden");
+        loginForm.classList.add("hidden");
+      });
+
+      loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const email = document.getElementById("login-email").value;
+        if (email.endsWith("@admin.com")) {
+          window.location.href = "./Movie/registerMovie.html";
+        } else {
+          window.location.href = "../Library/catalog.html";
+        }
+      });
+
+      registerForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const email = document.getElementById("register-email").value;
+        const username = document.getElementById("register-name").value;
+
+        if (email.endsWith("@admin.com")) {
+          window.location.href = "registerMovie.html";
+        } else {
+          window.location.href = `../Library/catalog.html?username=${encodeURIComponent(
+            username
+          )}`;
+        }
+      });
+    </script>
+  </body>
+</html>
