@@ -8,14 +8,19 @@
     <script src="/tailwind-config.js"></script>
   </head>
   <body class="bg-primary-black text-gray-300 font-sans">
-    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4" 
+        style="
+        background-image: url('https://pbs.twimg.com/media/E76FeguUYAEq9zl.jpg:large');
+        ">
       <a
         href="../Home/index.html"
         class="text-4xl font-bold mb-8"
         style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)"
       >
-        <span class="text-primary-red">Scream</span
-        ><span class="text-white">Flix</span>
+      <div class="bg-primary-black rounded-md px-24 py-6 inline-block">
+        <span class="text-primary-red">Scream</span>
+        <span class="text-white">Flix</span>
+      </div>
       </a>
 
       <div
@@ -65,6 +70,7 @@
               required
             />
           </div>
+          <p id="login-error-message" class="text-red-500 text-sm hidden"></p>
           <button
             type="submit"
             class="w-full text-white bg-primary-black hover:bg-primary-red font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300 border-2 border-primary-red"
@@ -86,6 +92,7 @@
               name="username"
               class="bg-primary-black border border-secondary-black text-white text-sm rounded-lg focus:ring-primary-red focus:border-primary-red block w-full p-2.5"
               placeholder="O seu nome"
+              required
             />
           </div>
           <div>
@@ -130,6 +137,7 @@
               required
             />
           </div>
+          <p id="register-error-message" class="text-red-500 text-sm hidden"></p>
           <button
             type="submit"
             class="w-full text-white bg-primary-black hover:bg-primary-red font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300 border-2 border-primary-red"
@@ -139,6 +147,8 @@
         </form>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@latest/dist/pouchdb.min.js"></script>
+    <script src="/router.js" defer></script>
     <script src="/scripts.js" defer></script>
   </body>
 </html>

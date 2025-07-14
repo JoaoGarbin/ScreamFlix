@@ -8,7 +8,6 @@
     <script src="/tailwind-config.js"></script>
 </head>
 <body class="bg-primary-black text-gray-300 font-sans">
-
     <nav class="bg-primary-black bg-opacity-75 p-4 fixed top-0 left-0 right-0 z-20 backdrop-blur-sm border-b border-secondary-black">
         <div class="container mx-auto flex justify-between items-center">
             <a href="../Library/catalog.html" class="text-3xl font-bold" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
@@ -25,36 +24,31 @@
             </div>
         </div>
     </nav>
-    
     <main class="container mx-auto px-4 pt-24 pb-10">
         <header class="mb-10">
             <h1 id="welcome-message" class="text-3xl md:text-4xl font-bold text-white mb-2">Bem-vindo(a)!</h1>
             <p class="text-lg text-gray-400">Explore o nosso catálogo de filmes e séries de terror.</p>
         </header>
-        
         <section class="mb-12">
             <h2 class="text-2xl font-bold text-white mb-4">Melhores Filmes de Terror</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a href="../Library/details.html"><article class="group relative overflow-hidden rounded-md cursor-pointer"><img src="https://br.web.img2.acsta.net/r_1920_1080/pictures/23/08/24/21/28/4212500.jpg" alt="Pôster do Filme O Iluminado" class="w-full h-full object-cover"/></article></a>
-                <a href="../Library/details.html"><article class="group relative overflow-hidden rounded-md cursor-pointer"><img src="https://br.web.img2.acsta.net/c_310_420/pictures/18/06/14/13/11/1751062.jpg" alt="Pôster do Filme Hereditário" class="w-full h-full object-cover"/></article></a>
-            </div>
+            <div id="best-movies-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"></div>
         </section>
-
         <section class="mb-12">
             <h2 class="text-2xl font-bold text-white mb-4">Lançamentos de Terror</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <a href="../Library/details.html"><article class="group relative overflow-hidden rounded-md cursor-pointer"><img src="https://image.tmdb.org/t/p/w500/3s8fX2iWe23246T25K1sjfLBr3D.jpg" alt="Pôster do Filme Imaculada" class="w-full h-full object-cover"/></article></a>
-                <a href="../Library/details.html"><article class="group relative overflow-hidden rounded-md cursor-pointer"><img src="https://image.tmdb.org/t/p/w500/d9yL2tr9imUuD0g2g1T16hY8w2a.jpg" alt="Pôster do Filme M3GAN" class="w-full h-full object-cover"/></article></a>
-            </div>
+            <div id="new-releases-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"></div>
+        </section>
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-4">Séries de Terror</h2>
+            <div id="series-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"></div>
         </section>
     </main>
-
     <footer class="bg-primary-black text-gray-400 text-center py-6 border-t border-secondary-black">
         <div class="container mx-auto">
             <p>&copy; 2025 ScreamFlix. Todos os direitos reservados.</p>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@latest/dist/pouchdb.min.js"></script>
+    <script src="/router.js" defer></script>
     <script src="/scripts.js" defer></script>
 </body>
 </html>
