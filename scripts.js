@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const user = await App.userDb.get(email);
                     if (user.password === this.hashPassword(password)) {
                         errorMessage.classList.add('hidden');
-                        window.location.href = email.endsWith("@admin.com") ? "../Movie/registerMovie.html" : "../Library/catalog.html";
+                        window.location.href = email.endsWith("@admin.com") ? "registerMovie.html" : "catalog.html";
                     } else {
                         errorMessage.textContent = "Senha incorreta.";
                         errorMessage.classList.remove('hidden');
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 App.db.put(movie).then(() => {
                     alert(`Filme ${movie._rev ? 'atualizado' : 'cadastrado'} com sucesso!`);
                     if (movie._rev) {
-                        window.location.href = './listMovie.html';
+                        window.location.href = 'listMovie.html';
                     } else {
                         event.target.reset();
                     }
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="bg-primary-black p-4 rounded-lg flex justify-between items-center border border-secondary-black hover:bg-secondary-black transition-colors duration-300">
                                 <h3 class="text-lg font-semibold text-white">${movie.title}</h3>
                                 <div class="flex items-center space-x-4">
-                                    <a href="./registerMovie.html?id=${movie._id}" class="text-gray-400 hover:text-primary-red transition-colors duration-300" title="Editar Filme"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" /></svg></a>
+                                    <a href="registerMovie.html?id=${movie._id}" class="text-gray-400 hover:text-primary-red transition-colors duration-300" title="Editar Filme"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.536L16.732 3.732z" /></svg></a>
                                     <button class="text-gray-400 hover:text-red-500 transition-colors duration-300 delete-btn" title="Eliminar Filme" data-id="${movie._id}" data-rev="${movie._rev}"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button>
                                 </div>
                             </div>`;
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     result.rows.forEach(item => {
                         const movie = item.doc;
                         const movieHTML = `
-                            <a href="./details.html?id=${movie._id}">
+                            <a href="details.html?id=${movie._id}">
                                 <article class="group relative overflow-hidden rounded-md cursor-pointer">
                                     <img src="${movie.posterUrl || 'https://placehold.co/500x750/1a1a1a/FFFFFF?text=Poster'}" alt="Pôster de ${movie.title}" class="w-full h-full object-cover"/>
                                 </article>
@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="h-full min-h-screen bg-gradient-to-t from-primary-black via-primary-black/80 to-transparent">
                             <main class="container mx-auto px-4 pt-24 pb-10 flex items-end h-full min-h-screen">
                                 <div>
-                                    <a href="./catalog.html" class="mb-4 inline-flex items-center px-3 py-1 bg-secondary-black/50 rounded-md hover:bg-secondary-black transition-colors">
+                                    <a href="catalog.html" class="mb-4 inline-flex items-center px-3 py-1 bg-secondary-black/50 rounded-md hover:bg-secondary-black transition-colors">
                                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                                         Voltar ao Catálogo
                                     </a>
