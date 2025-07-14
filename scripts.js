@@ -262,6 +262,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         'Melhores Filmes de Terror': document.getElementById('best-movies-container'),
                         'Lançamentos de Terror': document.getElementById('new-releases-container'),
                         'Séries de Terror': document.getElementById('series-container'),
+                        'Slasher': document.getElementById('slasher-container'),
+                        'Terror Sobrenatural': document.getElementById('supernatural-container'),
+                        'Terror Psicológico': document.getElementById('psychological-container'),
+                        'Terror Folclórico': document.getElementById('folk-container'),
+                        'Found Footage': document.getElementById('found-footage-container'),
                     };
                     Object.values(containers).forEach(c => { if (c) c.innerHTML = ''; });
 
